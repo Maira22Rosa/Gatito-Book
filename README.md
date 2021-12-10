@@ -1,1 +1,2 @@
-# angular_2_curso
+# Gatito Book
+Rede social para amantes de animais,principalmente gatinhos
