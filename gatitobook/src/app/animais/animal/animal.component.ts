@@ -1,4 +1,4 @@
-import { Component,Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 const API = environment.apiURL;
@@ -6,29 +6,26 @@ const API = environment.apiURL;
 @Component({
   selector: 'app-animal',
   templateUrl: './animal.component.html',
-  styleUrls: ['./animal.component.css']
+  styleUrls: ['./animal.component.css'],
 })
 export class AnimalComponent implements OnInit {
+  private urlOriginal = '';
 
-  private UrlOriginal = '';
+  @Input() descricao = '';
 
-  @Input() 
-  descricao = '';
-
-  @Input() set url(url:string){
-    if(url.startsWith('data')){
-      this.UrlOriginal = url;
-    }else{
-      this.UrlOriginal = `${API}/imgs/${url}`;
+  @Input() set url(url: string) {
+    if (url.startsWith('data')) {
+      this.urlOriginal = url;
+    } else {
+      this.urlOriginal = `${API}/imgs/${url}`;
     }
   }
 
-  get url():string{
-    return this.UrlOriginal;
-  }
-  constructor() { }
-
-  ngOnInit(): void {
+  get url(): string {
+    return this.urlOriginal;
   }
 
+  constructor() {}
+
+  ngOnInit(): void {}
 }

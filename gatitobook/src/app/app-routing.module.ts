@@ -12,13 +12,13 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
-    canLoad:[LoginGuard],
-  }, 
+    canLoad: [LoginGuard],
+  },
   {
     path: 'animais',
     loadChildren: () =>
       import('./animais/animais.module').then((m) => m.AnimaisModule),
-      canLoad:[AutenticacaoGuard],
+    canLoad: [AutenticacaoGuard],
   },
 ];
 
